@@ -1,0 +1,49 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <!-- Registers a user principal in the http request for authenticated users -->
+    <filter>
+        <filter-name>securityfilter</filter-name>
+        <filter-class>spctemplate.security.SecurityFilter</filter-class>
+    </filter>
+
+    <!-- Allows REST calls from other domains and port numbers -->
+    <filter>
+        <filter-name>cross-origin</filter-name>
+        <filter-class>org.eclipse.jetty.servlets.CrossOriginFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>securityfilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>cross-origin</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
+    <servlet>
+        <servlet-name>jersey-servlet</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <!-- Specifies the package where the jax-rs services are located -->
+            <param-name>jersey.config.server.provider.packages</param-name>
+            <param-value>spctemplate</param-value>
+        </init-param>
+        <init-param>
+            <!-- Specifies the application class -->
+            <param-name>javax.ws.rs.Application</param-name>
+            <param-value>spctemplate.JsrApplication</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>jersey-servlet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>
