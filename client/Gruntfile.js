@@ -56,6 +56,15 @@ module.exports = function(grunt) {
 					open: true
 				}
 			},
+			app: {
+				options: {
+					port: 9000,
+					base: 'app',
+					hostname: 'localhost',
+                	livereload: 35729,
+					open: true
+				}
+			}
 		},
 
 		watch: {
@@ -94,11 +103,25 @@ module.exports = function(grunt) {
 	});
 
 	// Starts webserver and reloads browser when something changes
-    grunt.registerTask('serve', [
-            'build',
-            'connect',
-            'watch'
-        ]);
+    grunt.registerTask('serve', function(target) {
+
+    		var tasks;
+    		if(target === 'dist') {
+    			tasks = [
+    				'build',
+    				'connect:dist',
+    				'watch'
+    				];
+    		} else {
+    			tasks = [
+    				'build',
+    				'connect:app',
+    				'watch'
+    				];
+    		}
+
+    		grunt.task.run(tasks);
+    	});
 
 	// Builds the distribution
     grunt.registerTask('build', [

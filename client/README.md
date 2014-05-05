@@ -10,6 +10,11 @@ F.eks:
 
 	git checkout -f steg-1
 
+# Steg 7 - Ulike targets for bygging og intern webserver
+
+Vi definerer to targets for connect og bruker en funksjon for å definere hvordan tasken 'serve' skal fungere.
+
+
 # Steg 6 - minifying and concat
 
 Nye plugins for minifying og sammenslåing av filer.
