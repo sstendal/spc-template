@@ -87,7 +87,8 @@ module.exports = function(grunt) {
                 	destPrefix: 'app/scripts'
             	},
 				files: {
-					'jquery.js': 'jquery/dist/jquery.js'
+					'jquery.js': 'jquery/dist/jquery.js',
+					'angular.js': 'angular/angular.js'
 				}
 			}
 		},

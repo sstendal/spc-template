@@ -10,6 +10,22 @@ F.eks:
 
 	git checkout -f steg-1
 
+# Steg 8 - Angular
+
+Vi legger til Angular
+
+## Bygging
+Kjør 
+
+	bower install
+
+og
+
+	grunt bowercopy
+
+for å laste ned angular før du bygger prosjektet.
+
+
 # Steg 7 - Ulike targets for bygging og intern webserver
 
 Vi definerer to targets for connect og bruker en funksjon for å definere hvordan tasken 'serve' skal fungere.
