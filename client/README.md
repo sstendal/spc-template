@@ -10,6 +10,34 @@ F.eks:
 
 	git checkout -f steg-1
 
+# Steg 2 - lage en tarball for installasjon
+
+## package.json
+Vi har lagt til fire dependencies i package.json.
+
+### load-grunt-tasks
+Brukes i Gruntfile.js for å forenkle lasting av tasks
+
+### grunt-contrib-copy
+Brukes for å kopiere filer fra katalogen app til dist
+
+### grunt-contrib-compress
+Brukes for å pakke filene i dist til en tarball
+
+### grunt-contrib-clean
+Brukes for å tømme bygge-katalogene
+
+## Gruntfile.js
+Gruntfile er utvidet med definisjoner som lager en distribusjons-fil under "public".
+
+## Bygging
+Bygg prosjektet med
+
+	grunt
+
+Tidligere bygginger slettes, alle filer kopieres på nytt og pakkes i filen public/spc-installation.tgz
+
+
 # Steg 1 - initialisere prosjektet som et Grunt-prosjekt
 
 Vi har lagt til to filer:
