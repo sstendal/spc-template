@@ -10,6 +10,25 @@ F.eks:
 
 	git checkout -f steg-1
 
+# Steg 5 - Bower
+
+Installerer Bower og laster ned jquery.
+
+## bower.json
+Denne filen definerer avhengigheter til eksterne javascript-bibliotek som brukes i nettsidene. Vi har lagt inn en avhengighet til jquery.
+
+## Bygging
+Last ned jquery med kommandoen
+
+	bower install
+
+Jquery legges under bower_components.
+
+Kopier jquery.js til app/scripts med
+
+	grunt bowercopy
+
+
 # Steg 4 - Watch
 
 Ny task som overvåker filer og laster websiden på nytt når noe endres.
