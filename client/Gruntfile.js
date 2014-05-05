@@ -99,7 +99,13 @@ module.exports = function(grunt) {
 
 		usemin: {
  			html: 'dist/index.html'
-		}
+		},
+
+		karma: {
+  			unit: {
+    			configFile: 'test/karma.conf.js'
+  			}
+  		}
 
 	});
 

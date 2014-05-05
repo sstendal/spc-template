@@ -10,6 +10,16 @@ F.eks:
 
 	git checkout -f steg-1
 
+# Steg 9 - Karma/Jasmine unit testing
+
+Vi legger til støtte for Karma/Jasmine unittesting
+
+## Bygging
+For å starte Karma kjører du
+
+	grunt karma
+	
+
 # Steg 8 - Angular
 
 Vi legger til Angular
