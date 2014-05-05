@@ -43,6 +43,18 @@ module.exports = function(grunt) {
 					]
 				}]
 			}
+		},
+
+		connect: {
+			dist: {
+				options: {
+					port: 9000,
+					base: 'dist',
+					hostname: 'localhost',
+					keepalive: true,
+					open: true
+				}
+			}
 		}
 
 	});

@@ -10,6 +10,16 @@ F.eks:
 
 	git checkout -f steg-1
 
+# Steg 3 - Node.js webserver
+
+Ny task som åpner en Node.js webserver.
+
+## Bygging
+Etter at du har bygget prosjektet kan du starte en webserver med
+
+	grunt connect
+
+
 # Steg 2 - lage en tarball for installasjon
 
 ## package.json
