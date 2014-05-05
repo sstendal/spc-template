@@ -15,9 +15,7 @@ module.exports = function(grunt) {
 					cwd: 'app/',
 					dest: 'dist/',
 					src: [
-						'*.html',
-						'**/*.css',
-						'**/*.js'
+						'*.html'
 					]
 				}]
 			}
@@ -41,7 +39,8 @@ module.exports = function(grunt) {
 					dot: true,
 					src: [
 						'dist/*',
-						'public/*'
+						'public/*',
+						'.tmp'
 					]
 				}]
 			}
@@ -56,7 +55,7 @@ module.exports = function(grunt) {
                 	livereload: 35729,
 					open: true
 				}
-			}
+			},
 		},
 
 		watch: {
@@ -82,23 +81,40 @@ module.exports = function(grunt) {
 					'jquery.js': 'jquery/dist/jquery.js'
 				}
 			}
-		}		
+		},
+
+		useminPrepare: {
+ 			html: 'app/index.html'
+		},
+
+		usemin: {
+ 			html: 'dist/index.html'
+		}
 
 	});
 
 	// Starts webserver and reloads browser when something changes
     grunt.registerTask('serve', [
-            'copy',
+            'build',
             'connect',
             'watch'
         ]);
 
+	// Builds the distribution
+    grunt.registerTask('build', [
+            'copy',
+			'useminPrepare',
+			'concat',
+			'uglify',
+			'cssmin',
+			'usemin',
+        ]);
 
 
 	// Defines the default grunt tasks as a list of other (pre-defined) tasks
 	grunt.registerTask('default', [
 		'clean',
-		'copy',
+		'build',
 		'compress'
 		]);
 	

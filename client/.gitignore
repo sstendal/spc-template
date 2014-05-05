@@ -3,3 +3,4 @@ dist
 public
 npm-debug.log
 bower_components
+.tmp

@@ -10,6 +10,16 @@ F.eks:
 
 	git checkout -f steg-1
 
+# Steg 6 - minifying and concat
+
+Nye plugins for minifying og sammenslåing av filer.
+
+Vi bruker usemin plugin for å organisere dette. Den bruker igjen concat, cssmin og uglify.
+
+## Bygging
+Når du kjører grunt serve vil du se at alle css-filer og javascript-filer er slått sammen og minifisert.
+
+
 # Steg 5 - Bower
 
 Installerer Bower og laster ned jquery.
