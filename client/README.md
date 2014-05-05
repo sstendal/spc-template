@@ -10,6 +10,18 @@ F.eks:
 
 	git checkout -f steg-1
 
+# Steg 4 - Watch
+
+Ny task som overvåker filer og laster websiden på nytt når noe endres.
+
+## Bygging
+Start webserveren med 
+
+	grunt serve
+
+Dette starter en jobb som overvåker alle endringer på filene og laster nettsiden på nytt ved endringer.
+
+
 # Steg 3 - Node.js webserver
 
 Ny task som åpner en Node.js webserver.

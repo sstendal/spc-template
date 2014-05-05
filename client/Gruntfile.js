@@ -15,7 +15,9 @@ module.exports = function(grunt) {
 					cwd: 'app/',
 					dest: 'dist/',
 					src: [
-						'*.html'
+						'*.html',
+						'**/*.css',
+						'**/*.js'
 					]
 				}]
 			}
@@ -51,13 +53,36 @@ module.exports = function(grunt) {
 					port: 9000,
 					base: 'dist',
 					hostname: 'localhost',
-					keepalive: true,
+                	livereload: 35729,
 					open: true
+				}
+			}
+		},
+
+		watch: {
+			dist: {
+				files: [
+					'app/**/*.html',
+					'app/**/*.js',
+					'app/**/*.css'
+					],
+				tasks: ['default'],
+				options: {
+					livereload: true
 				}
 			}
 		}
 
 	});
+
+	// Starts webserver and reloads browser when something changes
+    grunt.registerTask('serve', [
+            'copy',
+            'connect',
+            'watch'
+        ]);
+
+
 
 	// Defines the default grunt tasks as a list of other (pre-defined) tasks
 	grunt.registerTask('default', [
